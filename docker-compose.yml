@@ -1,0 +1,30 @@
+version: "3.11"
+
+services:
+  app:
+    build: .
+    restart: always
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+        - db
+    command: >
+      sh -c "python manage.py migrate &&
+            python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db/app
+      - DJANGO_SETTINGS_MODULE=config.settings
+
+  db:
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_DB=app
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:
