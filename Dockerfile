@@ -11,7 +11,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Poetry
-RUN pip3 install poetry
+RUN pip3 install poetry==2.1.1
 RUN poetry config virtualenvs.create false
 
 # Copy using poetry.lock* in case it doesn't exist yet
