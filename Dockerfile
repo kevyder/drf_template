@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.13.1-slim
 
 ENV PYTHONUNBUFFERED 1
 
@@ -29,5 +29,5 @@ COPY . /app/
 RUN mkdir -p /postgres_data
 RUN adduser --disabled-password --gecos '' user
 RUN chown -R user:user /postgres_data/
-RUN poetry install --no-root
+RUN poetry install --without dev
 USER user
