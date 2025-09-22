@@ -14,7 +14,7 @@ django-cors-headers = "4.8.0"
 nplusone = "1.0.0"
 
 [tool.poetry.group.test.dependencies]
-coverage = "7.10.6"
+coverage = "7.10.7"
 pytest-django = "4.11.1"
 pytest = "8.4.2"
 
