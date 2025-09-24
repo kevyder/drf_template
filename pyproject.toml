@@ -10,7 +10,7 @@ package-mode = false
 python = "^3.10"
 djangorestframework = "3.16.1"
 psycopg2-binary = "2.9.10"
-django-cors-headers = "4.8.0"
+django-cors-headers = "4.9.0"
 nplusone = "1.0.0"
 
 [tool.poetry.group.test.dependencies]
