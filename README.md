@@ -1,6 +1,6 @@
 # drf_template
 
-A ready-to-use Django REST Framework project template.
+A production-ready Django REST Framework project template.
 
 ## Features
 
@@ -12,13 +12,13 @@ A ready-to-use Django REST Framework project template.
 - Code formatting and linting: Black, isort, Flake8
 - Pre-commit hooks for code quality
 - Sample logging configuration
-- Poetry for dependency management
+- UV for dependency management
 
 ## Quick Start
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/kevyder/drf_template.git
+   git clone https://github.com/yourusername/drf_template.git
    cd drf_template
    ```
 
@@ -28,19 +28,19 @@ A ready-to-use Django REST Framework project template.
    ```
 
 3. **Access the app:**
-   - API: [http://localhost:8001/](http://localhost:8001/)
-   - Admin: [http://localhost:8001/admin/](http://localhost:8001/admin/)
+   - API: [http://localhost:8080/](http://localhost:8080/)
+   - Admin: [http://localhost:8080/admin/](http://localhost:8080/admin/)
 
 ## Development
 
-- Python 3.10+
-- Install [Poetry](https://python-poetry.org/docs/#installation) 2.1.1 for dependency management.
+- Python 3.13+
+- Install [UV](https://github.com/astral-sh/uv) for dependency management:
   ```sh
-  pip install poetry==2.1.1
+  pip install uv
   ```
 - Install dependencies:
   ```sh
-  poetry install
+  uv sync
   ```
 - Run migrations:
   ```sh
@@ -55,15 +55,29 @@ A ready-to-use Django REST Framework project template.
 
 - Run tests:
   ```sh
-  poetry run pytest
+  uv run pytest
+  ```
+
+## Code Quality
+
+- Format code:
+  ```sh
+  uv run black .
+  ```
+- Lint code:
+  ```sh
+  uv run flake8
+  ```
+- Sort imports:
+  ```sh
+  uv run isort .
   ```
 
 ## Pre-commit
 
 - Install pre-commit hooks:
-
   ```sh
-  poetry run pre-commit install
+  uv run pre-commit install
   ```
 
 ## License
