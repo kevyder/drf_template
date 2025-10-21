@@ -1,32 +1,39 @@
-[tool.poetry]
+[project]
 name = "drf-template"
 version = "0.1.0"
 description = "Django REST framework project template"
-authors = ["Kevin Rodriguez <kyrodriguez97@gmail.com>"]
+authors = [{ name = "Kevin Rodriguez", email = "kyrodriguez97@gmail.com" }]
+requires-python = ">=3.13.1"
 readme = "README.md"
-package-mode = false
+dependencies = [
+    "djangorestframework==3.16",
+    "psycopg2-binary==2.9.10",
+    "django-cors-headers==4.7.0",
+    "nplusone==1.0.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-djangorestframework = "3.16"
-psycopg2-binary = "2.9.10"
-django-cors-headers = "4.7.0"
-nplusone = "1.0.0"
+[dependency-groups]
+test = [
+    "coverage==7.9.1",
+    "pytest-django==4.11.1",
+    "pytest==8.4.1",
+]
+dev = [
+    "flake8==7.3.0",
+    "autoflake==2.3.1",
+    "mypy==1.16.1",
+    "isort==6.0.1",
+    "black==25.1.0",
+    "pre-commit==4.2.0",
+]
 
-[tool.poetry.group.test.dependencies]
-coverage = "7.9.1"
-pytest-django = "4.11.1"
-pytest = "8.4.1"
-
-[tool.poetry.group.dev.dependencies]
-flake8 = "7.3.0"
-autoflake = "2.3.1"
-mypy = "1.16.1"
-isort = "6.0.1"
-black = "25.1.0"
-pydantic = "2.11.7"
-pre-commit = "4.2.0"
+[tool.uv]
+package = false
+default-groups = [
+    "test",
+    "dev",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
