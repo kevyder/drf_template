@@ -19,12 +19,8 @@ test = [
     "pytest==9.0.2",
 ]
 dev = [
-    "flake8==7.3.0",
-    "autoflake==2.3.1",
-    "mypy==1.19.0",
-    "isort==7.0.0",
-    "black==25.11.0",
-    "pre-commit==4.5.0",
+    "pre-commit (==4.5.0)",
+    "ruff (==0.14.9)",
 ]
 
 [tool.uv]
@@ -33,6 +29,29 @@ default-groups = [
     "test",
     "dev",
 ]
+
+# Ruff configuration
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle
+    "F", # Pyflakes
+    "UP", # pyupgrade
+    "B", # flake8-bugbear
+    "SIM", # flake8-simplify
+    "I", # isort
+]
+ignore = ["E203", "E305"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
 [build-system]
 requires = ["hatchling"]
