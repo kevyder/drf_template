@@ -1,7 +1,7 @@
-FROM python:3.13.9-slim
+FROM python:3.14.0-slim
 
 ENV PYTHONUNBUFFERED 1
-ENV UV_VERSION=0.9.3
+ENV UV_VERSION=0.9.17
 ENV UV_PROJECT_ENVIRONMENT="/usr/local/"
 
 # Set work directory
@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY ./pyproject.toml ./uv.lock* /app/
 
 # Install dependencies
-RUN uv sync
+RUN uv sync --no-dev
 
 COPY . /app/
 
