@@ -33,7 +33,7 @@ A production-ready Django REST Framework project template.
 
 ## Development
 
-- Python 3.13+
+- Python 3.14+
 - Install [UV](https://github.com/astral-sh/uv) for dependency management:
   ```sh
   pip install uv
@@ -60,17 +60,10 @@ A production-ready Django REST Framework project template.
 
 ## Code Quality
 
-- Format code:
+- Use ruff for linting and formatting:
   ```sh
-  uv run black .
-  ```
-- Lint code:
-  ```sh
-  uv run flake8
-  ```
-- Sort imports:
-  ```sh
-  uv run isort .
+  uvx ruff check   # Lint all files in the current directory.
+  uvx ruff format  # Format all files in the current directory.
   ```
 
 ## Pre-commit
