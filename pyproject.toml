@@ -20,7 +20,7 @@ test = [
 ]
 dev = [
     "pre-commit (==4.6.0)",
-    "ruff (==0.15.9)",
+    "ruff (==0.15.12)",
 ]
 
 [tool.uv]
