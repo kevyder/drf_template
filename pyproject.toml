@@ -7,7 +7,7 @@ requires-python = ">=3.13.1"
 readme = "README.md"
 dependencies = [
     "djangorestframework==3.17.1",
-    "psycopg2-binary==2.9.11",
+    "psycopg2-binary==2.9.12",
     "django-cors-headers==4.9.0",
     "nplusone==1.0.0",
 ]
